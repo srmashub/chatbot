@@ -1,0 +1,122 @@
+intents:
+  # add your intents
+  - greet
+  - thank
+  - bye
+  - deny
+  - affirm
+  - trigger_jenkinsjob
+  - trigger_deploy
+  - check_service
+  - check_JIRA_Status
+  - create_JIRA_request
+  - request_restaurant
+  - inform
+  - ask_access
+
+entities:
+  # replace with your entities
+  - example_entity
+  - jenkinsjob
+  - environment
+  - appname
+  - servicename
+  - JIRAID
+  - cuisine
+  - people
+  - vegetarian
+  - summary
+  - description
+  - access
+
+
+slots:
+  # replace with your slots
+  example_slot:
+    type: unfeaturized
+  jenkinsjob:
+    type: text
+  environment:
+    type: text
+  appname:
+    type: text  
+  servicename:
+    type: text
+  JIRAID:
+    type: text
+  cuisine:
+    type: text
+  people:
+    type: text
+  vegetarian:
+    type: text
+  requested_slot:
+    type: unfeaturized
+  summary:
+    type: text
+  description:
+    type: text
+  access:
+    type: text
+
+templates:
+  # templates the bot should respond with
+  utter_greet:
+    - "Hey, how can I help you?"
+  utter_thank:
+    - "You're welcome!"
+  utter_bye:
+    - "Goodbye"
+  utter_ask_jenkinsjob:
+    - "For which jenkins job?"
+  utter_ask_appname:
+    - "For which appname?"
+  utter_ask_environment:
+    - "For which environment?"
+  utter_ask_servicename:
+    - "For which application or service?"
+  utter_anythingelse:
+    - "Is there anything else I can help you with?"
+  utter_done:
+    - "Done!"
+  utter_unknown:
+    - "Sorry, I dont recognise what you say!" 
+  utter_ask_ID:
+    - "For which ID?"
+  utter_ask_cuisine:
+    - "For which cuisine?"
+  utter_ask_people:
+    - "For how many people?"
+  utter_ask_vegetarian:
+    - "Only Veg? (yes/no)"
+  utter_ask_summary:
+    - "Please mention the summary of the issue :"
+  utter_ask_description:
+    - "Kindly provide description of the issue :"
+  utter_ask_JIRAID:
+    - "What's the JIRA_ID ?"
+
+actions:
+  # all the utter actions from the templates, plus any custom actions
+  - utter_greet
+  - utter_thank
+  - utter_bye
+  - utter_ask_jenkinsjob
+  - utter_ask_environment
+  - utter_ask_appname
+  - utter_ask_servicename
+  - utter_anythingelse
+  - utter_done
+  - utter_unknown
+  - utter_ask_ID
+  - actions.ActionCheckService
+  - actions.ActionStartJenkinsBuildWithParams
+  - actions.ActionStartJenkinsBuild
+  - actions.ActionGetJIRAStatus
+  - actions.ActionGetJIRACreate
+  - actions.ActionSearchRestaurants
+  - actions.ActionRestarted
+#  - action_jenkins
+#  - action_jenkins_param
+#  - action_jenkinstrigger
+#  - action_deploy
